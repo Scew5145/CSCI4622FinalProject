@@ -12,6 +12,7 @@ test_set = pd.read_csv('training_set.csv')
 target_id = 713
 
 for i in range(len(test_set['object_id'])):
+    # I'm 100% sure there's some pandas bullshittery I can do heere that works way better than this
     if test_set['object_id'][i] > target_id:
             break
     if 0 < test_set['mjd'][i] and test_set['object_id'][i] == target_id:
@@ -33,6 +34,7 @@ total_objects = len(metadata['object_id'])
 non_cat = 0
 super_cat = 0
 for i in range(len(metadata['object_id'])):
+    # Again, I should learn pandas
     upper_bound = metadata['hostgal_photoz'][i] + metadata['hostgal_photoz_err'][i]
     lower_bound = metadata['hostgal_photoz'][i] - metadata['hostgal_photoz_err'][i]
     if not metadata['hostgal_specz'][i]:
