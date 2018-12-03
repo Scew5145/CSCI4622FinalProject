@@ -2,4 +2,5 @@
 *.pdf
 *.zip
 *.csv
+!polynomial_coefficients_train*zip
 .DS_Store
